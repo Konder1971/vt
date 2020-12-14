@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="robots" content="none"/>
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- версия для разработки, отображает полезные предупреждения в консоли -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+
+  <script src="https://unpkg.com/vue@next"></script> <!-- для vue 3 для создания прототипов или обучения -->
+
+  <!-- production-версия, оптимизированная для размера и скорости -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+
+</head>
+<body>
+  
+  <h1>Заголовок H1</h1>
+
+  <div id="components-demo">
+    <button-counter></button-counter>
+  </div>
+
+  <div id="app"></div>
+
+
+  <br /><br />
+  <div id="list-rendering">
+  </div>
+
+  <br /><br />
+  <div id="todo-list-app">
+    <ol>
+      <todo-item
+        v-for="item in groceryList"
+        :todo="item"
+        :key="item.id"
+      ></todo-item>
+    </ol>
+  </div>
+
+
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
