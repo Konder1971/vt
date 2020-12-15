@@ -118,3 +118,7 @@ button {
     display: none!important;
   }
 }
+
+div {
+  margin-bottom: 20px;
+}

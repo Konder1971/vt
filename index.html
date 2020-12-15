@@ -24,6 +24,34 @@
 
   <div class="counter"></div>
 
+  <div class="invvod">
+    <p>Введённое в инпут: {{ vvod }}</p>
+    <input type="text" v-model='vvod'>
+  </div>
+
+  <div class="ifseen">
+    <p>Если true/false: <span v-if='seen'>true</span></p>
+  </div>
+
+  <div class="olspisok">
+    <ol>
+      <li v-for="spis in spisok" :key="spis.id">
+        {{ spis.id * 3 }}
+        {{ spis.text }}
+      </li>
+    </ol>
+  </div>
+
+  <div class="comp">
+    <ul>
+      <spisok-li
+        v-for="spisk in spiskli"
+        :spis="spisk"
+        :key="spisk.id"
+      ></spisok-li>
+    </ul>
+  </div>
+
 
 
   <script src="js/main.js"></script>
