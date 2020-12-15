@@ -65,11 +65,9 @@ const Comp = {
     }
   }
 }
-const app = Vue.createApp(Comp)
-
-app.component('spisok-li', {
+const sp = Vue.createApp(Comp)
+sp.component('spisok-li', {
   props: ['spis'],
   template: `<li>{{ spis.text }} : {{ spis.id }}</li>`
 })
-
-app.mount('.comp')
+sp.mount('.comp')
