@@ -1,3 +1,11 @@
+const H1 = {
+  data() {
+    return {
+      seen: false
+    }
+  }
+}
+Vue.createApp(H1).mount('#h1')
 
 const Counter = {
   data() {
