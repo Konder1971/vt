@@ -123,7 +123,7 @@ app5.component('blog-post', {
     <p class="blog-post">
       <h4>{{ title }}</h4>
       <button @click="$emit('enlarge-text')">
-        Enlarge text
+        Увеличить text
       </button>
     </p>
   `
