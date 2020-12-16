@@ -85,7 +85,6 @@ app3.component('button-counter', {
 app3.mount('#components-demo')
 
 
-
 const App4 = {
   data() {
     return {
@@ -103,3 +102,30 @@ app4.component('blog-post', {
   template: `<h4>{{ title }}</h4>`
 })
 app4.mount('#blog-posts-demo')
+
+
+
+const app5 = Vue.createApp({
+  data() {
+    return {
+      posts: [
+        { id: 1, title: 'My journey with Vue'},
+        { id: 2, title: 'Blogging with Vue'},
+        { id: 3, title: 'Why Vue is so fun'}
+      ],
+      postFontSize: 1
+    }
+  }
+})
+app5.component('blog-post', {
+  props: ['title'],
+  template: `
+    <div class="blog-post">
+      <h4>{{ title }}</h4>
+      <button @click="$emit('enlarge-text')">
+        Enlarge text
+      </button>
+    </div>
+  `
+})
+app5.mount('#blog-posts-events-demo')
