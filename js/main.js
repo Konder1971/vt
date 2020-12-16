@@ -53,3 +53,28 @@ app.component('todo-item', {
   template: `<li>{{ todo.text }}</li>`
 })
 app.mount('#todo-list-app')
+
+/* Создание экземпляра приложения */
+const app2 = Vue.createApp ({
+  data() {
+    return {
+      ekz: 'Создание экземпляра приложения'
+    }
+  }
+})
+const vm2 = app2.mount('#ekz')
+
+/* Создание компонентов */
+const app3 = Vue.createApp({})
+app3.component('button-counter', {
+  data() {
+    return {
+      count: 0
+    }
+  },
+  template: `
+    <button @click="count++">
+      You clicked me {{ count }} times.
+    </button> Создание компонентов<br />`
+})
+app3.mount('#components-demo')
