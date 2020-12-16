@@ -5,8 +5,13 @@ const Counter = {
       counter: 0,
       colsbros: 0
     }
-  },
+  },/*
   mounted() {
+    setInterval(() => {
+      this.counter++
+    }, 500)
+  },*/
+  created() {
     setInterval(() => {
       this.counter++
     }, 500)
@@ -69,7 +74,7 @@ const app3 = Vue.createApp({})
 app3.component('button-counter', {
   data() {
     return {
-      count: 0
+      count: 1
     }
   },
   template: `
@@ -78,3 +83,23 @@ app3.component('button-counter', {
     </button> Создание компонентов<br />`
 })
 app3.mount('#components-demo')
+
+
+
+const App4 = {
+  data() {
+    return {
+      posts: [
+        { id: 1, title: 'My journey with Vue' },
+        { id: 2, title: 'Blogging with Vue' },
+        { id: 3, title: 'Why Vue is so fun' }
+      ]
+    }
+  }
+}
+const app4 = Vue.createApp(App4)
+app4.component('blog-post', {
+  props: ['title'],
+  template: `<h4>{{ title }}</h4>`
+})
+app4.mount('#blog-posts-demo')

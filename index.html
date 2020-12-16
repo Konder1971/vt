@@ -50,6 +50,16 @@
     <button-counter></button-counter>
   </div>
 
+  
+  <div id="blog-posts-demo">
+    <p>Передача данных дочерним компонентам с помощью свойств</p>
+    <blog-post
+      v-for="post in posts"
+      :key="post.id"
+      :title="post.title"
+    ></blog-post>
+  </div>
+
 
 
 
