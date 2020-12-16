@@ -22,35 +22,26 @@
 </head>
 <body>
 
-  <div class="counter"></div>
+  <div id="counter"></div>
 
-  <div class="invvod">
-    <p>Введённое в инпут: {{ vvod }}</p>
-    <input type="text" v-model='vvod'>
-  </div>
-
-  <div class="ifseen">
-    <p>Если true/false: <span v-if='seen'>true</span></p>
-  </div>
-
-  <div class="olspisok">
-    <ol>
-      <li v-for="spis in spisok" :key="spis.id">
-        {{ spis.id * 3 }}
-        {{ spis.text }}
+  <div id="list">
+    <ul>
+      <li v-for="list in lists" :key="list.id">
+        {{ list.id }} | {{ list.text }}
       </li>
+    </ul>
+  </div>
+
+  <div id="todo-list-app">
+    <ol>
+      <todo-item
+        v-for="item in groceryList"
+        v-bind:todo="item"
+        v-bind:key="item.id"
+      ></todo-item>
     </ol>
   </div>
 
-  <div class="comp">
-    <ul>
-      <spisok-li
-        v-for="spisk in spiskli"
-        :spis="spisk"
-        :key="spisk.id"
-      ></spisok-li>
-    </ul>
-  </div>
 
 
 
