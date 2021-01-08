@@ -1,3 +1,41 @@
+const Zametki = Vue.createApp({
+  data() {
+    return {
+      title: 'Список Заметок',
+      placeholderText: 'введите заголовок',
+      zagolovok: '',
+      spisoks: []
+    }
+  },
+  methods: {
+    dobavit() {
+      if(this.zagolovok !== '') {
+        this.spisoks.push(this.zagolovok)
+        this.zagolovok = ''
+      }
+    },
+    udalit(index) {
+      this.spisoks.splice(index, 1)
+    },
+    upper(item) {
+      return item.toUpperCase()
+    }
+  },
+  computed: {
+    udaleno() {
+      return this.spisoks.length * 2
+    }
+  },
+  watch: {
+    zagolovok(value) {
+      if(value.length > 25) {
+        this.zagolovok = ''
+      }
+    }
+  }
+})
+Zametki.mount('#zametki')
+
 
 const Counter = {
   data() {
