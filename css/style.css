@@ -122,3 +122,18 @@ button {
 div {
   margin-bottom: 20px;
 }
+
+.bobrderNone {
+  border: none
+}
+.borderyes {
+  border: 1px solid #f0f;
+}
+.act1 {
+  font-weight: 400;
+  color: #00f;
+}
+.act2 {
+  font-weight: 900;
+  color: #c00;
+}
