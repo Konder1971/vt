@@ -21,6 +21,55 @@
 
 </head>
 <body>
+  
+    <div id="zametki">
+
+    <div>
+      <h1 :style="{
+        color: zagolovok.length < 5 ? 'green' : 'darkred',
+        fontSize: zagolovok.length < 6 ? '24px' : '32px'
+      }">
+        {{ title }}
+      </h1>
+    </div>
+
+    <div>
+      <input 
+        type="text" 
+        :placeholder="placeholderText" 
+        v-on:keypress.enter="dobavit"
+        v-model="zagolovok" 
+      /> <button @click="dobavit">Добавить</button>
+    </div>
+
+    <div>Вы ввели: <span>{{ zagolovok }}</span></div>
+
+    <div v-if="spisoks.length !== 0">
+      <ul>
+        <li v-for="(spisok, index) in spisoks" :class="
+        ['bobrderNone', {'borderyes': spisok.length > 5}]
+        ">
+          ({{ index + 1 }}) <span :class="
+            spisok.length < 7 ? 'act1' : 'act2'
+          ">
+          {{ upper(spisok) }}
+        </span> <button @click="udalit(index)" :class="{
+        'act1': true,
+        'act2': spisok.length > 5
+        }">Удалить</button>
+        </li>
+      </ul>
+    </div>
+
+    <div v-else>Заметок нет. Добавте первую.</div>
+      
+    <div><hr /></div>
+    
+    <div>количество заметок: {{ spisoks.length }} | удвоенное = {{ udaleno }} </div>
+    
+  </div>
+  
+  
 
   <div id="counter"></div>
 
