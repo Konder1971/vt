@@ -9,6 +9,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
   <meta name="format-detection" content="telephone=no" />
+  <!--
+  <meta http-equiv="x-rim-auto-match" content="none" />	
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="favicon.png" type="image/x-icon" />
+  -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <!-- версия для разработки, отображает полезные предупреждения в консоли -->
@@ -21,110 +32,11 @@
 
 </head>
 <body>
-  
-    <div id="zametki">
 
-    <div>
-      <h1 :style="{
-        color: zagolovok.length < 5 ? 'green' : 'darkred',
-        fontSize: zagolovok.length < 6 ? '24px' : '32px'
-      }">
-        {{ title }}
-      </h1>
-    </div>
-
-    <div>
-      <input 
-        type="text" 
-        :placeholder="placeholderText" 
-        v-on:keypress.enter="dobavit"
-        v-model="zagolovok" 
-      /> <button @click="dobavit">Добавить</button>
-    </div>
-
-    <div>Вы ввели: <span>{{ zagolovok }}</span></div>
-
-    <div v-if="spisoks.length !== 0">
-      <ul>
-        <li v-for="(spisok, index) in spisoks" :class="
-        ['bobrderNone', {'borderyes': spisok.length > 5}]
-        ">
-          ({{ index + 1 }}) <span :class="
-            spisok.length < 7 ? 'act1' : 'act2'
-          ">
-          {{ upper(spisok) }}
-        </span> <button @click="udalit(index)" :class="{
-        'act1': true,
-        'act2': spisok.length > 5
-        }">Удалить</button>
-        </li>
-      </ul>
-    </div>
-
-    <div v-else>Заметок нет. Добавте первую.</div>
-      
-    <div><hr /></div>
-    
-    <div>количество заметок: {{ spisoks.length }} | удвоенное = {{ udaleno }} </div>
-    
-  </div>
-  
-  
-
-  <div id="counter"></div>
-
-  <div id="list">
-    <ul>
-      <li v-for="list in lists" :key="list.id">
-        {{ list.id }} | {{ list.text }}
-      </li>
-    </ul>
+  <div class="myApp1">
+    <h1>{{ titleH1 }}</h1>
   </div>
 
-  <div id="todo-list-app">
-    <ol>
-      <todo-item
-        v-for="item in groceryList"
-        v-bind:todo="item"
-        v-bind:key="item.id"
-      ></todo-item>
-    </ol>
-  </div>
-
-  <div id="ekz">{{ ekz }}</div>
-
-  <div id="components-demo">
-    <button-counter></button-counter>
-    <button-counter></button-counter>
-    <button-counter></button-counter>
-  </div>
-
-  
-  <div id="blog-posts-demo">
-    <p>Передача данных дочерним компонентам с помощью свойств</p>
-    <blog-post
-      v-for="post in posts"
-      :key="post.id"
-      :title="post.title"
-    ></blog-post>
-  </div>
-
-
-  <div id="blog-posts-events-demo">
-    <p>Увеличить text:</p>
-    <div :style="{ fontSize: postFontSize + 'em' }">
-      <blog-post
-         v-for="post in posts"
-         :key="post.id"
-         :title="post.title"
-         @enlarge-text="postFontSize += 0.1"
-      ></blog-post>
-    </div>
-  </div>
-
-
-
-
-  <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
